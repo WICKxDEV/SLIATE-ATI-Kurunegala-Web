@@ -10,7 +10,7 @@ if(!empty($_POST["classid"]))
  else{
  $stmt = $dbh->prepare("SELECT StudentName,StudentId FROM tblstudents WHERE ClassId= :id order by StudentName");
  $stmt->execute(array(':id' => $cid));
- ?><option value="">Select Category </option><?php
+ ?><option value="">Select Student Name</option><?php
  while($row=$stmt->fetch(PDO::FETCH_ASSOC))
  {
   ?>
