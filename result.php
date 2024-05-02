@@ -139,49 +139,66 @@ foreach($resultss as $row)
 
                                                 	
                                                 	<tbody>
-<?php                                              
+<?php
 // Code for result
+$query = "SELECT t.StudentName, t.RollId, t.ClassId, t.marks, SubjectId, tblsubjects.SubjectName FROM (SELECT sts.StudentName, sts.RollId, sts.ClassId, tr.marks, SubjectId FROM tblstudents AS sts JOIN tblresult AS tr ON tr.StudentId = sts.StudentId) AS t JOIN tblsubjects ON tblsubjects.id = t.SubjectId WHERE (t.RollId = :rollid AND t.ClassId = :classid)";
+$query = $dbh->prepare($query);
+$query->bindParam(':rollid', $rollid, PDO::PARAM_STR);
+$query->bindParam(':classid', $classid, PDO::PARAM_STR);
+$query->execute();
+$results = $query->fetchAll(PDO::FETCH_OBJ);
+$cnt = 1;
+$totalGPA = 0;
+$totalSubjects = 0;
 
- $query ="select t.StudentName,t.RollId,t.ClassId,t.marks,SubjectId,tblsubjects.SubjectName from (select sts.StudentName,sts.RollId,sts.ClassId,tr.marks,SubjectId from tblstudents as sts join  tblresult as tr on tr.StudentId=sts.StudentId) as t join tblsubjects on tblsubjects.id=t.SubjectId where (t.RollId=:rollid and t.ClassId=:classid)";
-$query= $dbh -> prepare($query);
-$query->bindParam(':rollid',$rollid,PDO::PARAM_STR);
-$query->bindParam(':classid',$classid,PDO::PARAM_STR);
-$query-> execute();  
-$results = $query -> fetchAll(PDO::FETCH_OBJ);
-$cnt=1;
-if($countrow=$query->rowCount()>0)
-{ 
+if ($query->rowCount() > 0) {
+    foreach ($results as $result) {
+        $marks = $result->marks;
+        $gradePoint = 0;
 
-foreach($results as $result){
+        // Convert marks into grade points
+        if ($marks >= 90) {
+            $gradePoint = 4.0;
+        } elseif ($marks >= 80) {
+            $gradePoint = 3.0;
+        } elseif ($marks >= 70) {
+            $gradePoint = 2.0;
+        } elseif ($marks >= 60) {
+            $gradePoint = 1.0;
+        } else {
+            $gradePoint = 0.0;
+        }
 
-    ?>
-
-                                                		<tr>
-                                                <th scope="row"><?php echo htmlentities($cnt);?></th>
-                                                			<td><?php echo htmlentities($result->SubjectName);?></td>
-                                                			<td><?php echo htmlentities($totalmarks=$result->marks);?></td>
-                                                		</tr>
-<?php 
-$totlcount+=$totalmarks;
-$cnt++;}
+        $totalGPA += $gradePoint;
+        $totalSubjects++;
 ?>
-<tr>
-                                                <th scope="row" colspan="2">Total Marks</th>
-<td><b><?php echo htmlentities($totlcount); ?></b> out of <b><?php echo htmlentities($outof=($cnt-1)*100); ?></b></td>
-                                                        </tr>
-<tr>
-                                                <th scope="row" colspan="2">Percntage</th>           
-                                                            <td><b><?php echo  htmlentities($totlcount*(100)/$outof); ?> %</b></td>
-                                                             </tr>
-<tr>
-                                                <th scope="row" colspan="2">Download Result</th>           
-                                                            <td><b><a href="download-result.php">Download </a> </b></td>
-                                                             </tr>
-
- <?php } else { ?>     
-<div class="alert alert-warning left-icon-alert" role="alert">
-                                            <strong>Notice!</strong> Your result not declare yet
- <?php }
+        <tr>
+            <th scope="row"><?php echo htmlentities($cnt); ?></th>
+            <td><?php echo htmlentities($result->SubjectName); ?></td>
+            <td><?php echo htmlentities($marks); ?></td>
+            <td><?php echo htmlentities($gradePoint); ?></td>
+        </tr>
+<?php 
+        $cnt++;
+    }
+    $averageGPA = $totalGPA / $totalSubjects;
+?>
+    <tr>
+        <th scope="row" colspan="3">Average GPA</th>
+        <td><b><?php echo number_format($averageGPA, 2); ?></b></td>
+    </tr>
+    <tr>
+        <th scope="row" colspan="3">Download Result</th>           
+        <td><b><a href="download-result.php">Download</a></b></td>
+    </tr>
+<?php 
+} else { 
+?>
+    <div class="alert alert-warning left-icon-alert" role="alert">
+        <strong>Notice!</strong> Your result has not been declared yet.
+    </div>
+<?php 
+}
 ?>
                                         </div>
  <?php 
