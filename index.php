@@ -122,13 +122,13 @@ echo "<script type='text/javascript'> document.location = 'dashboard.php'; </scr
                     </div>
 
                     <div class="checkbox form-group">
-                    <div class="form-check">
+                    <!-- <div class="form-check">
                         <input class="form-check-input" type="checkbox" value="" id="">
                         <label class="form-check-label" for="">
                         Remember me
                         </label>
-                    </div>
-                    <a href="#">Forgot Password</a>
+                    </div> -->
+                    <!-- <a href="#">Forgot Password</a> -->
                     </div>
                     <div class="form-group">
                         <button type="submit" name="login" class="_btn_04">Sign in</button>
