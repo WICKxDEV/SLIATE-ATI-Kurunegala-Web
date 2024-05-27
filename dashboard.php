@@ -63,7 +63,7 @@ $totalstudents=$query1->rowCount();
 ?>
 
                                             <span class="number counter"><?php echo htmlentities($totalstudents);?></span>
-                                            <span class="name">Regd Users</span>
+                                            <span class="name">Registered Students</span>
                                             <span class="bg-icon"><i class="fa fa-users"></i></span>
                                         </a>
                                         <!-- /.dashboard-stat -->
@@ -97,7 +97,7 @@ $results2=$query2->fetchAll(PDO::FETCH_OBJ);
 $totalclasses=$query2->rowCount();
 ?>
                                             <span class="number counter"><?php echo htmlentities($totalclasses);?></span>
-                                            <span class="name">Total classes listed</span>
+                                            <span class="name">Department Listed</span>
                                             <span class="bg-icon"><i class="fa fa-bank"></i></span>
                                         </a>
                                         <!-- /.dashboard-stat -->
@@ -115,7 +115,7 @@ $totalresults=$query3->rowCount();
 ?>
 
                                             <span class="number counter"><?php echo htmlentities($totalresults);?></span>
-                                            <span class="name">Results Declared</span>
+                                            <span class="name">Total Results Released</span>
                                             <span class="bg-icon"><i class="fa fa-file-text"></i></span>
                                         </a>
                                         <!-- /.dashboard-stat -->

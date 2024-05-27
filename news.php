@@ -1,3 +1,7 @@
+<?php
+session_start();
+error_reporting(0);
+?>
 <!DOCTYPE html>
 <html>
   <head>
@@ -24,15 +28,15 @@
         <div class="nav-links" id="navLinks">
           <i class="fas fa-times-circle" onclick="hideMenu()"></i>
           <ul>
-            <li><a href="index.html">HOME</a></li>
-            <li><a href="about.html">ABOUT</a></li>
-            <li><a href="course.html">COURSES</a></li>
+            <li><a href="index.php">HOME</a></li>
+            <li><a href="about.php">ABOUT</a></li>
+            <li><a href="course.php">COURSES</a></li>
             <li><a href="find-result.php">RESULTS</a></li>
-            <li><a href="news.html">NEWS</a></li>
-            <li><a href="gallery.html">GALLERY</a></li>
-            <li><a href="staff.html">STAFF</a></li>
-            <li><a href="contact.html">CONTACT</a></li>
-            <li><a href="index.php">ADMIN</a></li>
+            <li><a href="news.php">NEWS</a></li>
+            <li><a href="gallery.php">GALLERY</a></li>
+            <li><a href="staff.php">STAFF</a></li>
+            <li><a href="contact.php">CONTACT</a></li>
+            <li><a href="login.php">ADMIN</a></li>
           </ul>
         </div>
         <i class="fas fa-bars" onclick="showMenu()"></i>
@@ -306,15 +310,15 @@
         <div class="footer-col">
           <h3>Navigations</h3>
           <ul>
-            <li><a href="index.html">HOME</a></li>
-            <li><a href="about.html">ABOUT</a></li>
-            <li><a href="course.html">COURSES</a></li>
+            <li><a href="index.php">HOME</a></li>
+            <li><a href="about.php">ABOUT</a></li>
+            <li><a href="course.php">COURSES</a></li>
             <li><a href="find-result.php">RESULTS</a></li>
-            <li><a href="news.html">NEWS</a></li>
-            <li><a href="gallery.html">GALLERY</a></li>
-            <li><a href="staff.html">STAFF</a></li>
-            <li><a href="contact.html">CONTACT</a></li>
-            <li><a href="index.php">ADMIN</a></li>
+            <li><a href="news.php">NEWS</a></li>
+            <li><a href="gallery.php">GALLERY</a></li>
+            <li><a href="staff.php">STAFF</a></li>
+            <li><a href="contact.php">CONTACT</a></li>
+            <li><a href="login.php">ADMIN</a></li>
           </ul>
         </div>
         <div class="footer-col">

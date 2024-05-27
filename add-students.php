@@ -153,10 +153,10 @@ else if($error){?>
 
 
                                                     <div class="form-group">
-                                                        <label for="default" class="col-sm-2 control-label">Class</label>
+                                                        <label for="default" class="col-sm-2 control-label">Department</label>
                                                         <div class="col-sm-10">
  <select name="class" class="form-control" id="default" required="required">
-<option value="">Select Class</option>
+<option value="">Select Department</option>
 <?php $sql = "SELECT * from tblclasses";
 $query = $dbh->prepare($sql);
 $query->execute();

@@ -28,15 +28,15 @@ include('includes/config.php');?><!DOCTYPE html>
             <div class="nav-links" id="navLinks">
                 <i class="fas fa-times-circle" onclick="hideMenu()"></i>
                 <ul>
-                    <li><a  href="index.html">HOME</a></li>
-                    <li><a  href="about.html">ABOUT</a></li>
-                    <li><a  href="course.html">COURSES</a></li>
-                    <li><a  href="find-result.php">RESULTS</a></li>
-                    <li><a  href="news.html">NEWS</a></li>
-                    <li><a  href="gallery.html">GALLERY</a></li>
-                    <li><a  href="staff.html">STAFF</a></li>
-                    <li><a  href="contact.html">CONTACT</a></li>
-                    <li><a href="index.php">ADMIN</a></li>
+                    <li><a href="index.php">HOME</a></li>
+                    <li><a href="about.php">ABOUT</a></li>
+                    <li><a href="course.php">COURSES</a></li>
+                    <li><a href="find-result.php">RESULTS</a></li>
+                    <li><a href="news.php">NEWS</a></li>
+                    <li><a href="gallery.php">GALLERY</a></li>
+                    <li><a href="staff.php">STAFF</a></li>
+                    <li><a href="contact.php">CONTACT</a></li>
+                    <li><a href="login.php">ADMIN</a></li>
                 </ul>
             </div>
             <i class="fas fa-bars" onclick="showMenu()"></i>
@@ -284,27 +284,15 @@ echo htmlentities("Invalid Roll Id");
             <div class="footer-col">
                 <h3>Navigations</h3>
                 <ul>
-                    <li>
-                        <a href="index.html">Home</a><br>
-                    </li>
-                    <li>
-                        <a href="about.html">About</a><br>
-                    </li>
-                    <li>
-                        <a href="course.html">Course</a><br>
-                    </li>
-                    <li>
-                        <a href="news.html">News</a><br>
-                    </li>
-                    <li>
-                        <a href="gallery.html">Gallery</a><br>
-                    </li>
-                    <li>
-                        <a href="staff.html">Staff</a><br>
-                    </li>
-                    <li>
-                        <a href="contact.html">Contacts</a><br>
-                    </li>
+                    <li><a href="index.php">HOME</a></li>
+                    <li><a href="about.php">ABOUT</a></li>
+                    <li><a href="course.php">COURSES</a></li>
+                    <li><a href="find-result.php">RESULTS</a></li>
+                    <li><a href="news.php">NEWS</a></li>
+                    <li><a href="gallery.php">GALLERY</a></li>
+                    <li><a href="staff.php">STAFF</a></li>
+                    <li><a href="contact.php">CONTACT</a></li>
+                    <li><a href="login.php">ADMIN</a></li>
                 </ul>
             </div>
             <div class="footer-col">

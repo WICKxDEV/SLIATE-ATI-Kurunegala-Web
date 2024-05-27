@@ -1,3 +1,7 @@
+<?php
+session_start();
+error_reporting(0);
+?>
 <!DOCTYPE html>
 <html>
   <head>
@@ -24,20 +28,22 @@
         <div class="nav-links" id="navLinks">
           <i class="fas fa-times-circle" onclick="hideMenu()"></i>
           <ul>
-            <li><a href="index.html">HOME</a></li>
-            <li><a href="about.html">ABOUT</a></li>
-            <li><a href="course.html">COURSES</a></li>
+            <li><a href="index.php">HOME</a></li>
+            <li><a href="about.php">ABOUT</a></li>
+            <li><a href="course.php">COURSES</a></li>
             <li><a href="find-result.php">RESULTS</a></li>
-            <li><a href="news.html">NEWS</a></li>
-            <li><a href="gallery.html">GALLERY</a></li>
-            <li><a href="staff.html">STAFF</a></li>
-            <li><a href="contact.html">CONTACT</a></li>
-            <li><a href="index.php">ADMIN</a></li>
+            <li><a href="news.php">NEWS</a></li>
+            <li><a href="gallery.php">GALLERY</a></li>
+            <li><a href="staff.php">STAFF</a></li>
+            <li><a href="contact.php">CONTACT</a></li>
+            <li><a href="login.php">ADMIN</a></li>
           </ul>
         </div>
         <i class="fas fa-bars" onclick="showMenu()"></i>
       </nav>
-      <h1>CONTACT US</h1>
+      <h1>
+        Higher National Diploma in Information Technology
+      </h1>
     </section>
 
     <!-----------JavaScript for Toggle Small Menu-------->
@@ -51,59 +57,70 @@
       }
     </script>
 
-    <!-----------Contact Us-------->
-    <section class="location">
+    <!-------- HND------->
+    <section class="hnd">
+      <h2>HNDIT</h2>
       <div class="row">
-        <div class="map">
-          <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1977.906245220293!2d80.35210100140958!3d7.48594626771209!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae33be8aaaaa89b%3A0x77e62cabc378990f!2sSLIATE%20Kurunegala!5e0!3m2!1sen!2slk!4v1700133247604!5m2!1sen!2slk"
-            width="600"
-            height="450"
-            style="border: 0"
-            allowfullscreen=""
-            loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade"
-          ></iframe>
-        </div>
-        <div class="contact-us">
-          <div class="cotact-details">
-            <h2>🏠</h2>
-            <span>
-              <h5>SLIATE,ATI</h5>
-              <p>22/1,Wilgoda rd,Kurunegala</p>
-            </span>
-          </div>
-          <div class="cotact-details">
-            <h2>☎️</h2>
-            <span>
-              <h5>+94372229583</h5>
-              <p>Monday to Saturday,8.00AM to 5.00PM</p>
-            </span>
-          </div>
-          <div class="cotact-details">
-            <h2>📨</h2>
-            <span>
-              <h5>atikurunegala@sliate.ac.lk</h5>
-              <p>Email us your query</p>
-            </span>
-          </div>
+        <div class="hnd-col">
+          <h3>Course Duration: 2 1/2 years</h3>
+          <h4>Mode of Conducting Programme</h4>
+          <p>
+            Full-Time Courses<br />
+            Part-Time Courses (During Weekends)<br />
+            Medium of instruction: - English<br />
+            Part-Time courses are conducted for those who are employed in the
+            relevant fields..
+          </p>
         </div>
       </div>
-    </section>
-    <section class="contact">
-      <div class="contact-row">
-        <div class="contact-box">
-          <form action="">
-            <input type="text" placeholder="Enter your name" required />
-            <input
-              type="email"
-              placeholder="Enter your email address "
-              required
-            />
-            <input type="text" placeholder="Enter your subject" required />
-            <textarea rows="8" placeholder="Message" required></textarea>
-            <button type="submit" class="hero-btn red-btn">SEND MASSAGE</button>
-          </form>
+      <div class="row">
+        <div class="hnd-col">
+          <h3>The Selection Criteria:</h3>
+          <p>
+            Candidates are selected through the order of merit in their GCE
+            (A/L) examination and through an aptitude/ IQ test.
+          </p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="hnd-col">
+          <h3>Entry Qualification</h3>
+          <p>
+            Full Time<br />
+            (i) Passed the G.C.E. (A/L) examination in one sitting in any stream
+            andOrdinary pass for English and Mathematics at the G.C.E. (O/L)
+            examination Part Time 1/2 years In addition to the qualifications in
+            Full Time the applicant should be employed in the relevant field in
+            a government institution / public enterprise / recognized firm or
+            self-employed (entrepreneur)
+          </p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="hnd-col">
+          <h3>Important Information for Beginners to Select the Program</h3>
+          <p>
+            * After the completion of 2 years academic program you will be
+            placed at a software development organization to follow an
+            industrial training under the NAITA supervision for a period of 6
+            months.<br /><br />
+
+            * Jobs are available in the present IT job market for those who have
+            completed the program.<br /><br />
+
+            * Carrier development path with degree programs are available in
+            local and foreign Universities.
+          </p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="hnd-col">
+          <h3>Course fees</h3>
+          <p>
+            No course fees are levied for full time course.<br />
+            Course fees for the part time students will be Eighteen thousand
+            Rupees (Rs. 18,000.00) per Semester
+          </p>
         </div>
       </div>
     </section>
@@ -143,15 +160,15 @@
         <div class="footer-col">
           <h3>Navigations</h3>
           <ul>
-            <li><a href="index.html">HOME</a></li>
-            <li><a href="about.html">ABOUT</a></li>
-            <li><a href="course.html">COURSES</a></li>
+            <li><a href="index.php">HOME</a></li>
+            <li><a href="about.php">ABOUT</a></li>
+            <li><a href="course.php">COURSES</a></li>
             <li><a href="find-result.php">RESULTS</a></li>
-            <li><a href="news.html">NEWS</a></li>
-            <li><a href="gallery.html">GALLERY</a></li>
-            <li><a href="staff.html">STAFF</a></li>
-            <li><a href="contact.html">CONTACT</a></li>
-            <li><a href="index.php">ADMIN</a></li>
+            <li><a href="news.php">NEWS</a></li>
+            <li><a href="gallery.php">GALLERY</a></li>
+            <li><a href="staff.php">STAFF</a></li>
+            <li><a href="contact.php">CONTACT</a></li>
+            <li><a href="login.php">ADMIN</a></li>
           </ul>
         </div>
         <div class="footer-col">

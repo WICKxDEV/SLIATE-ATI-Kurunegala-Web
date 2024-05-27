@@ -1,3 +1,7 @@
+<?php
+session_start();
+error_reporting(0);
+?>
 <!DOCTYPE html>
 <html>
   <head>
@@ -24,20 +28,20 @@
         <div class="nav-links" id="navLinks">
           <i class="fas fa-times-circle" onclick="hideMenu()"></i>
           <ul>
-            <li><a href="index.html">HOME</a></li>
-            <li><a href="about.html">ABOUT</a></li>
-            <li><a href="course.html">COURSES</a></li>
+            <li><a href="index.php">HOME</a></li>
+            <li><a href="about.php">ABOUT</a></li>
+            <li><a href="course.php">COURSES</a></li>
             <li><a href="find-result.php">RESULTS</a></li>
-            <li><a href="news.html">NEWS</a></li>
-            <li><a href="gallery.html">GALLERY</a></li>
-            <li><a href="staff.html">STAFF</a></li>
-            <li><a href="contact.html">CONTACT</a></li>
-            <li><a href="index.php">ADMIN</a></li>
+            <li><a href="news.php">NEWS</a></li>
+            <li><a href="gallery.php">GALLERY</a></li>
+            <li><a href="staff.php">STAFF</a></li>
+            <li><a href="contact.php">CONTACT</a></li>
+            <li><a href="login.php">ADMIN</a></li>
           </ul>
         </div>
         <i class="fas fa-bars" onclick="showMenu()"></i>
       </nav>
-      <h1>Our Courses</h1>
+      <h1>Higher National Diploma in Management</h1>
     </section>
 
     <!-----------JavaScript for Toggle Small Menu-------->
@@ -51,72 +55,50 @@
       }
     </script>
 
-    <!-------- Courses------->
-    <section class="courses">
-      <h1>Courses We Offer</h1>
-      <p>
-        We conduct Higher National Diploma and National Diploma courses in
-        Technological and Business Studies and any other courses as may be
-        determined by the Ministry of Higher Education. To plan and co-ordinate
-        the technical education in Sri Lanka. To conduct the
-        examination,evaluate students and to issue Higher National Diploma and
-        National Diploma.
-      </p>
-
+    <!-------- HND------->
+    <section class="hnd">
+      <h2>HNDM</h2>
       <div class="row">
-        <div class="course-col">
-          <a href="hndit.html">
-            <h3>HNDIT</h3>
-            <p>
-              Higher National Diploma in Information Technology-Candidates are
-              selected through the order of merit in their GCE (A/L) examination
-              and through an aptitude/ IQ test.
-            </p>
-          </a>
-        </div>
-
-        <div class="course-col">
-          <a href="hnda.html">
-            <h3>HNDA</h3>
-            <p>
-              Higher National Diploma in Accoutancy-Candidates are selected
-              through on Z-Score
-            </p>
-          </a>
-        </div>
-        <div class="course-col">
-          <a href="hnde.html">
-            <h3>HNDE</h3>
-            <p>
-              Higher National Diploma in English-Candidates are selected through
-              the Selection Test.
-            </p>
-          </a>
+        <div class="hnd-col">
+          <h3>Course Duration: 3 years</h3>
+          <h4>Mode of Conducting Programme</h4>
+          <p>
+            Full-Time Course ( During the weekdays)<br />
+            Medium of instruction: - English
+          </p>
         </div>
       </div>
       <div class="row">
-        <div class="course-col">
-          <a href="hndthm.html">
-            <h3>HNDTM</h3>
-            <p>
-              Higher National Diploma in Tourism and Hospitality
-              Management-Candidates are selected through the Selection Test.
-            </p>
-          </a>
+        <div class="hnd-col">
+          <h3>The Selection Criteria:</h3>
+          <p>Based on Selection Test</p>
         </div>
-        <div class="course-col">
-          <a href="hndm.html">
-            <h3>HNDM</h3>
-            <p>
-              Higher National Diploma in Management-Candidates are selected
-              through the Selection Test.
-            </p>
-          </a>
+      </div>
+      <div class="row">
+        <div class="hnd-col">
+          <h3>Entry Qualification</h3>
+          <p>
+            <u>Full Time</u><br />
+
+            Passed the G.C.E. (A/L) examination in one sitting in any stream And
+            Ordinary pass for English and Mathematics at the G.C.E. (O/L)
+            examination Or National Certificate for Accounting Technicians or
+            National Certificate in Business Studies (Public Administration /
+            Marketing) conducted by the Department of Technical Education &
+            Training And Ordinary pass for English and Mathematics at the G.C.E.
+            (O/L) examination
+          </p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="hnd-col">
+          <h3>Course fees</h3>
+          <p>No course fees for full time course.</p>
         </div>
       </div>
     </section>
 
-    <!-----------Services---------->
+    <!-----------Footer-------->
     <section class="footer">
       <h2>About US</h2>
       <div class="row">
@@ -151,15 +133,15 @@
         <div class="footer-col">
           <h3>Navigations</h3>
           <ul>
-            <li><a href="index.html">HOME</a></li>
-            <li><a href="about.html">ABOUT</a></li>
-            <li><a href="course.html">COURSES</a></li>
+            <li><a href="index.php">HOME</a></li>
+            <li><a href="about.php">ABOUT</a></li>
+            <li><a href="course.php">COURSES</a></li>
             <li><a href="find-result.php">RESULTS</a></li>
-            <li><a href="news.html">NEWS</a></li>
-            <li><a href="gallery.html">GALLERY</a></li>
-            <li><a href="staff.html">STAFF</a></li>
-            <li><a href="contact.html">CONTACT</a></li>
-            <li><a href="index.php">ADMIN</a></li>
+            <li><a href="news.php">NEWS</a></li>
+            <li><a href="gallery.php">GALLERY</a></li>
+            <li><a href="staff.php">STAFF</a></li>
+            <li><a href="contact.php">CONTACT</a></li>
+            <li><a href="login.php">ADMIN</a></li>
           </ul>
         </div>
         <div class="footer-col">
