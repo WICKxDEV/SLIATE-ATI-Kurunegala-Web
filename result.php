@@ -112,8 +112,8 @@ if($stmt->rowCount() > 0)
 foreach($resultss as $row)
 {   ?>
 <p><b>Student Name :</b> <?php echo htmlentities($row->StudentName);?></p>
-<p><b>Student Roll Id :</b> <?php echo htmlentities($row->RollId);?>
-<p><b>Student Class:</b> <?php echo htmlentities($row->ClassName);?>(<?php echo htmlentities($row->Section);?>)
+<p><b>Index Number :</b> <?php echo htmlentities($row->RollId);?>
+<p><b>Department:</b> <?php echo htmlentities($row->ClassName);?>(<?php echo htmlentities($row->Section);?>)
 <?php }
 
     ?>
@@ -132,6 +132,7 @@ foreach($resultss as $row)
                                                             <th>#</th>
                                                             <th>Subject</th>    
                                                             <th>Marks</th>
+                                                            <th>GPA</th>
                                                         </tr>
                                                </thead>
   
