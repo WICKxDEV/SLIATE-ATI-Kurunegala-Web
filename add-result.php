@@ -180,7 +180,7 @@ foreach($results as $result)
                                                         </div>
                                                     </div>
 <div class="form-group">
-                                                        <label for="date" class="col-sm-2 control-label ">Student Name</label>
+                                                        <label for="date" class="col-sm-2 control-label ">Student Index & Name</label>
                                                         <div class="col-sm-10">
                                                     <select name="studentid" class="form-control stid" id="studentid" required="required" onChange="getresult(this.value);">
                                                     </select>

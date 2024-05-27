@@ -121,7 +121,7 @@ else if($error){?>
 </div>
 
 <div class="form-group">
-<label for="default" class="col-sm-2 control-label">Roll Id</label>
+<label for="default" class="col-sm-2 control-label">Index Number</label>
 <div class="col-sm-10">
 <input type="text" name="rollid" class="form-control" id="rollid" maxlength="5" required="required" autocomplete="off">
 </div>

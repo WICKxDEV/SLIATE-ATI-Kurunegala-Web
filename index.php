@@ -5,7 +5,7 @@ error_reporting(0);
 <!DOCTYPE html>
 <html>
   <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>SLIATE</title>
     <link rel="icon" type="image/icon" href="images/icon.png" />
     <link rel="stylesheet" href="style.css" />
@@ -19,7 +19,6 @@ error_reporting(0);
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.2/css/all.min.css"
     />
-    <meta charset="UTF-8" />
   </head>
   <body>
     <section class="header">

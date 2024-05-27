@@ -7,17 +7,18 @@ if(!empty($_POST["classid"]))
  
  	echo htmlentities("invalid Class");exit;
  }
- else{
- $stmt = $dbh->prepare("SELECT StudentName,StudentId FROM tblstudents WHERE ClassId= :id order by StudentName");
- $stmt->execute(array(':id' => $cid));
- ?><option value="">Select Student Name</option><?php
- while($row=$stmt->fetch(PDO::FETCH_ASSOC))
- {
-  ?>
-  <option value="<?php echo htmlentities($row['StudentId']); ?>"><?php echo htmlentities($row['StudentName']); ?></option>
-  <?php
- }
+ else {
+  $stmt = $dbh->prepare("SELECT StudentName, StudentId, RollId FROM tblstudents WHERE ClassId = :id ORDER BY StudentName");
+  $stmt->execute(array(':id' => $cid));
+  ?><option value="">Select Student Name</option><?php
+  while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+      ?>
+      <!-- Concatenating StudentName and RollId with a delimiter like "-" -->
+      <option value="<?php echo htmlentities($row['RollId'] . '-' . $row['StudentId']); ?>"><?php echo htmlentities($row['RollId'] . ' - ' . $row['StudentName']); ?></option>
+      <?php
+  }
 }
+
 
 }
 // Code for Subjects

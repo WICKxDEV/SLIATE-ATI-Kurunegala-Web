@@ -4,7 +4,7 @@ error_reporting(0);
 include('includes/config.php');?><!DOCTYPE html>
 <html>
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/bootstrap.min.css" media="screen" >
     <link rel="stylesheet" href="css/font-awesome.min.css" media="screen" >
     <link rel="stylesheet" href="css/animate-css/animate.min.css" media="screen" >
@@ -17,10 +17,7 @@ include('includes/config.php');?><!DOCTYPE html>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.2/css/all.min.css">
-    <meta charset="UTF-8">
-
-    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.2/css/all.min.css"> 
 </head>
 <body>
     <section class="sub-header">
@@ -76,7 +73,7 @@ include('includes/config.php');?><!DOCTYPE html>
                                 	    </div>
                                       <div class="">
                                         <select name="class" class="form-control" id="default" required="required">
-                                        <option value="">Select Class</option><br><br>
+                                        <option value="">Select Department</option><br><br>
                                         <?php $sql = "SELECT * from tblclasses";
                                         $query = $dbh->prepare($sql); $query->execute();
                                         $results=$query->fetchAll(PDO::FETCH_OBJ); if($query->rowCount() > 0) {
