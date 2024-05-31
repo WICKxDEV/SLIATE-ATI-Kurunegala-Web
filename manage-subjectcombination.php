@@ -133,7 +133,7 @@ else if($error){?>
                                                         <tr>
                                                             <th>#</th>
                                                             <th>Department Name/Year & Semester</th>
-                                                            <th>Subject </th>
+                                                            <th>Subject Code/Subject Name </th>
                                                             <th>Status</th>
                                                             <th>Action</th>
                                                         </tr>
@@ -142,35 +142,37 @@ else if($error){?>
                                                         <tr>
                                                           <th>#</th>
                                                             <th>Department Name/Year & Semester</th>
-                                                            <th>Subject </th>
+                                                            <th>Subject Code/Subject Name</th>
                                                             <th>Status</th>
                                                             <th>Action</th>
                                                         </tr>
                                                     </tfoot>
                                                     <tbody>
-<?php $sql = "SELECT tblclasses.ClassName,tblclasses.Section,tblsubjects.SubjectName,tblsubjectcombination.id as scid,tblsubjectcombination.status from tblsubjectcombination join tblclasses on tblclasses.id=tblsubjectcombination.ClassId  join tblsubjects on tblsubjects.id=tblsubjectcombination.SubjectId";
+                                                    <?php
+$sql = "SELECT tblclasses.ClassName, tblclasses.Section, tblsubjects.SubjectName, tblsubjects.SubjectCode, tblsubjectcombination.id as scid, tblsubjectcombination.status 
+        FROM tblsubjectcombination 
+        JOIN tblclasses ON tblclasses.id = tblsubjectcombination.ClassId  
+        JOIN tblsubjects ON tblsubjects.id = tblsubjectcombination.SubjectId";
 $query = $dbh->prepare($sql);
 $query->execute();
-$results=$query->fetchAll(PDO::FETCH_OBJ);
-$cnt=1;
-if($query->rowCount() > 0)
-{
-foreach($results as $result)
-{   ?>
-<tr>
- <td><?php echo htmlentities($cnt);?></td>
-                                                            <td><?php echo htmlentities($result->ClassName);?> &nbsp; Semester-<?php echo htmlentities($result->Section);?></td>
-                                                            <td><?php echo htmlentities($result->SubjectName);?></td>
-                                                             <td><?php $stts=$result->status;
-if($stts=='0')
-{
-	echo htmlentities('Inactive');
-}
-else
-{
-	echo htmlentities('Active');
-}
-                                                             ?></td>
+$results = $query->fetchAll(PDO::FETCH_OBJ);
+$cnt = 1;
+if ($query->rowCount() > 0) {
+    foreach ($results as $result) {
+        ?>
+        <tr>
+            <td><?php echo htmlentities($cnt); ?></td>
+            <td><?php echo htmlentities($result->ClassName); ?> &nbsp; - <?php echo htmlentities($result->Section); ?></td>
+            <td><?php echo htmlentities($result->SubjectCode) . " - " . htmlentities($result->SubjectName); ?></td>
+            <td>
+                <?php
+                $stts = $result->status;
+                if ($stts == '0') {
+                    echo htmlentities('Inactive');
+                } else {
+                    echo htmlentities('Active');
+                }
+                ?></td>
                                                             
 <td>
 <?php if($stts=='0')

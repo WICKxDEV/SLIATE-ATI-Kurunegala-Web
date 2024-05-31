@@ -74,15 +74,21 @@ include('includes/config.php');?><!DOCTYPE html>
                                       <div class="">
                                         <select name="class" class="form-control" id="default" required="required">
                                         <option value="">Select Department</option><br><br>
-                                        <?php $sql = "SELECT * from tblclasses";
-                                        $query = $dbh->prepare($sql); $query->execute();
-                                        $results=$query->fetchAll(PDO::FETCH_OBJ); if($query->rowCount() > 0) {
-                                        foreach($results as $result) { ?>
-                                        <option value="<?php echo htmlentities($result->id); ?>">
-                                          <?php echo htmlentities($result->ClassName); ?>&nbsp; Section-<?php echo htmlentities($result->Section);
-                                          ?>
-                                        </option>
-                                        <?php }} ?>
+                                        <?php
+                                        $sql = "SELECT id, ClassName, ClassNameNumeric, Section FROM tblclasses";
+                                        $query = $dbh->prepare($sql);
+                                        $query->execute();
+                                        $results = $query->fetchAll(PDO::FETCH_OBJ);
+                                        if ($query->rowCount() > 0) {
+                                            foreach ($results as $result) {
+                                                ?>
+                                                <option value="<?php echo htmlentities($result->id); ?>">
+                                                    <?php echo htmlentities($result->ClassName . " - " . $result->ClassNameNumeric) . " - " . htmlentities($result->Section); ?>
+                                                </option>
+                                                <?php
+                                            }
+                                        }
+                                        ?>
                                         </select><br><br>
                                           </div>
                                           <div class="form-group mt-20">

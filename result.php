@@ -265,12 +265,18 @@ if ($query->rowCount() > 0) {
  } else
  {?>
 
-<div class="alert alert-danger left-icon-alert" role="alert">
-strong>Oh snap!</strong>
-<?php
-echo htmlentities("Invalid Roll Id");
- }
-?>
+<div class="alert alert-danger left-icon-alert animated shake" role="alert">
+    <strong>Oh snap!</strong> Your result has not been declared yet or recheck your index number and try again.
+    <br>
+    <br>
+    <br>
+    <a href="find-result.php" class="btn btn-danger">
+        <i class="fas fa-arrow-left"></i> Back to find results
+    </a>
+</div>
+    <?php } ?>
+</div>
+ 
                                         </div>
 
 

@@ -166,16 +166,21 @@ else if($error){?>
  <div class="col-sm-10">
  <select name="class" class="form-control clid" id="classid" onChange="getStudent(this.value);" required="required">
 <option value="">Select Department</option>
-<?php $sql = "SELECT * from tblclasses";
+<?php
+$sql = "SELECT id, ClassName, ClassNameNumeric, Section FROM tblclasses";
 $query = $dbh->prepare($sql);
 $query->execute();
-$results=$query->fetchAll(PDO::FETCH_OBJ);
-if($query->rowCount() > 0)
-{
-foreach($results as $result)
-{   ?>
-<option value="<?php echo htmlentities($result->id); ?>"><?php echo htmlentities($result->ClassName); ?>&nbsp; Section-<?php echo htmlentities($result->Section); ?></option>
-<?php }} ?>
+$results = $query->fetchAll(PDO::FETCH_OBJ);
+if ($query->rowCount() > 0) {
+    foreach ($results as $result) {
+        ?>
+        <option value="<?php echo htmlentities($result->id); ?>">
+            <?php echo htmlentities($result->ClassName . " - " . $result->ClassNameNumeric) . " - " . htmlentities($result->Section); ?>
+        </option>
+        <?php
+    }
+}
+?>
  </select>
                                                         </div>
                                                     </div>

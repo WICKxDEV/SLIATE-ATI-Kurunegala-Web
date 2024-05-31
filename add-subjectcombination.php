@@ -109,16 +109,22 @@ else if($error){?>
                                                         <div class="col-sm-10">
  <select name="class" class="form-control" id="default" required="required">
 <option value="">Select Department</option>
-<?php $sql = "SELECT * from tblclasses";
+<?php
+$sql = "SELECT id, ClassName, ClassNameNumeric, Section FROM tblclasses";
 $query = $dbh->prepare($sql);
 $query->execute();
-$results=$query->fetchAll(PDO::FETCH_OBJ);
-if($query->rowCount() > 0)
-{
-foreach($results as $result)
-{   ?>
-<option value="<?php echo htmlentities($result->id); ?>"><?php echo htmlentities($result->ClassName); ?>&nbsp; Section-<?php echo htmlentities($result->Section); ?></option>
-<?php }} ?>
+$results = $query->fetchAll(PDO::FETCH_OBJ);
+if ($query->rowCount() > 0) {
+    foreach ($results as $result) {
+        ?>
+        <option value="<?php echo htmlentities($result->id); ?>">
+            <?php echo htmlentities($result->ClassName . " - " . $result->ClassNameNumeric) . " - " . htmlentities($result->Section); ?>
+        </option>
+        <?php
+    }
+}
+?>
+
  </select>
                                                         </div>
                                                     </div>
@@ -127,16 +133,21 @@ foreach($results as $result)
                                                         <div class="col-sm-10">
  <select name="subject" class="form-control" id="default" required="required">
 <option value="">Select Subject</option>
-<?php $sql = "SELECT * from tblsubjects";
+<?php
+$sql = "SELECT id, SubjectName, SubjectCode FROM tblsubjects"; // Select SubjectCode as well
 $query = $dbh->prepare($sql);
 $query->execute();
-$results=$query->fetchAll(PDO::FETCH_OBJ);
-if($query->rowCount() > 0)
-{
-foreach($results as $result)
-{   ?>
-<option value="<?php echo htmlentities($result->id); ?>"><?php echo htmlentities($result->SubjectName); ?></option>
-<?php }} ?>
+$results = $query->fetchAll(PDO::FETCH_OBJ);
+if ($query->rowCount() > 0) {
+    foreach ($results as $result) {
+        ?>
+        <option value="<?php echo htmlentities($result->id); ?>">
+            <?php echo htmlentities($result->SubjectCode) . " - " . htmlentities($result->SubjectName); ?>
+        </option>
+        <?php
+    }
+}
+?>
  </select>
                                                         </div>
                                                     </div>
