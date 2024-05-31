@@ -96,6 +96,34 @@ include('includes/config.php');?><!DOCTYPE html>
                                                 <div class="">
 <?php
 
+function marksToGrade($marks) {
+    if ($marks >= 85) {
+        return 'A+';
+    } elseif ($marks >= 70) {
+        return 'A';
+    } elseif ($marks >= 65) {
+        return 'A-';
+    } elseif ($marks >= 60) {
+        return 'B+';
+    } elseif ($marks >= 55) {
+        return 'B';
+    } elseif ($marks >= 50) {
+        return 'B-';
+    } elseif ($marks >= 45) {
+        return 'C+';
+    } elseif ($marks >= 40) {
+        return 'C';
+    } elseif ($marks >= 35) {
+        return 'C-';
+    } elseif ($marks >= 30) {
+        return 'D+';
+    } elseif ($marks >= 25) {
+        return 'D';
+    } else {
+        return 'E';
+    }
+}
+
 $rollid=$_POST['rollid'];
 $classid=$_POST['class'];
 $_SESSION['rollid']=$rollid;
@@ -131,7 +159,7 @@ foreach($resultss as $row)
                                                         <tr>
                                                             <th>#</th>
                                                             <th>Subject</th>    
-                                                            <th>Marks</th>
+                                                            <th>Grade</th>
                                                             <th>GPA</th>
                                                         </tr>
                                                </thead>
@@ -155,19 +183,50 @@ $totalSubjects = 0;
 if ($query->rowCount() > 0) {
     foreach ($results as $result) {
         $marks = $result->marks;
+        $grade = marksToGrade($marks);
         $gradePoint = 0;
 
-        // Convert marks into grade points
-        if ($marks >= 90) {
-            $gradePoint = 4.0;
-        } elseif ($marks >= 80) {
-            $gradePoint = 3.0;
-        } elseif ($marks >= 70) {
-            $gradePoint = 2.0;
-        } elseif ($marks >= 60) {
-            $gradePoint = 1.0;
-        } else {
-            $gradePoint = 0.0;
+        // Convert grade into grade points
+        switch ($grade) {
+            case 'A+':
+                $gradePoint = 4.0;
+                break;
+            case 'A':
+                $gradePoint = 4.0;
+                break;
+            case 'A-':
+                $gradePoint = 3.7;
+                break;
+            case 'B+':
+                $gradePoint = 3.3;
+                break;
+            case 'B':
+                $gradePoint = 3.0;
+                break;
+            case 'B-':
+                $gradePoint = 2.7;
+                break;
+            case 'C+':
+                $gradePoint = 2.3;
+                break;
+            case 'C':
+                $gradePoint = 2.0;
+                break;
+            case 'C-':
+                $gradePoint = 1.7;
+                break;
+            case 'D+':
+                $gradePoint = 1.3;
+                break;
+            case 'D':
+                $gradePoint = 1.0;
+                break;
+            case 'E':
+                $gradePoint = 0.0;
+                break;
+            default:
+                $gradePoint = 0.0;
+                break;
         }
 
         $totalGPA += $gradePoint;
@@ -176,7 +235,7 @@ if ($query->rowCount() > 0) {
         <tr>
             <th scope="row"><?php echo htmlentities($cnt); ?></th>
             <td><?php echo htmlentities($result->SubjectName); ?></td>
-            <td><?php echo htmlentities($marks); ?></td>
+            <td><?php echo htmlentities($grade); ?></td>
             <td><?php echo htmlentities($gradePoint); ?></td>
         </tr>
 <?php 
