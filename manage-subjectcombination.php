@@ -132,7 +132,7 @@ else if($error){?>
                                                     <thead>
                                                         <tr>
                                                             <th>#</th>
-                                                            <th>Department Name/Year & Semester</th>
+                                                            <th>Department Name/ Year & Batch</th>
                                                             <th>Subject Code/Subject Name </th>
                                                             <th>Status</th>
                                                             <th>Action</th>
@@ -141,7 +141,7 @@ else if($error){?>
                                                     <tfoot>
                                                         <tr>
                                                           <th>#</th>
-                                                            <th>Department Name/Year & Semester</th>
+                                                            <th>Department Name/ Year & Batch</th>
                                                             <th>Subject Code/Subject Name</th>
                                                             <th>Status</th>
                                                             <th>Action</th>

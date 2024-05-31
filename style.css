@@ -389,7 +389,7 @@ h3{
 /*-------About Us page-----*/
 
 .sub-header{
-    height: 40vh;
+    height: 30vh;
     width: 100%;
     background-image: linear-gradient(rgba(4,9,30,0.7),rgba(4,9,30,0.7)),url(images/banner.png);
     background-position: center;
@@ -398,7 +398,7 @@ h3{
     color: #fff;
 }
 .sub-header h1{
-    margin-top: 100px;
+    margin-top: 20px;
 }
 .about-us{
     width: 80%;
