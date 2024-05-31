@@ -397,8 +397,12 @@ h3{
     text-align: center;
     color: #fff;
 }
-.sub-header h1{
-    margin-top: 100px;
+.sub-header nav {
+    margin-bottom: 0; /* Ensure no extra margin at the bottom of the nav */
+}
+
+.sub-header h1 {
+    margin-top: 5px; /* Decreased from 100px to 50px to move the h1 closer to the nav */
 }
 .about-us{
     width: 80%;
