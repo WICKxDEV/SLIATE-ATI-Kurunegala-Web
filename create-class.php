@@ -136,17 +136,17 @@ else if($error){?>
                                                 		</div>
                                                 	</div>
                                                        <div class="form-group has-success">
-                                                        <label for="success" class="control-label">Batch Category</label>
+                                                        <label for="success" class="control-label">Semester</label>
                                                         <div class="">
                                                             <input type="text" name="classnamenumeric" required="required" class="form-control" id="success">
-                                                            <span class="help-block">Eg- Full Time - F, Part Time - P  </span>
+                                                            <span class="help-block">Eg- Semester one - 1, Semester two - 2  </span>
                                                         </div>
                                                     </div>
                                                      <div class="form-group has-success">
                                                         <label for="success" class="control-label">Semester</label>
                                                         <div class="">
                                                             <input type="text" name="section" class="form-control" required="required" id="success">
-                                                            <span class="help-block">Eg- 1st year 1st Semester - 1.1, 1st year 2nd Semester - 1.2 etc</span>
+                                                            <span class="help-block">Eg- 1st year FullTime - 1.F, 1st year PartTime 1.P etc</span>
                                                         </div>
                                                     </div>
   <div class="form-group has-success">

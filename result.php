@@ -141,7 +141,7 @@ foreach($resultss as $row)
 {   ?>
 <p><b>Student Name :</b> <?php echo htmlentities($row->StudentName);?></p>
 <p><b>Index Number :</b> <?php echo htmlentities($row->RollId);?>
-<p><b>Department:</b> <?php echo htmlentities($row->ClassName);?>(<?php echo htmlentities($row->Section);?>)
+<p><b>Department :</b> <?php echo htmlentities($row->ClassName);?>(<?php echo htmlentities($row->Section);?>)
 <?php }
 
     ?>

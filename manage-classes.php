@@ -108,8 +108,8 @@ else if($error){?>
                                                         <tr>
                                                             <th>#</th>
                                                             <th>Department Name & Year</th>
-                                                            <th>Batch Category</th>
                                                             <th>Semester</th>
+                                                            <th>Batch Category</th>
                                                             <th>Creation Date</th>
                                                             <th>Action</th>
                                                         </tr>
@@ -118,8 +118,8 @@ else if($error){?>
                                                         <tr>
                                                           <th>#</th>
                                                             <th>Department Name & Year</th>
-                                                            <th>Batch Category</th>
                                                             <th>Semester</th>
+                                                            <th>Batch Category</th>
                                                             <th>Creation Date</th>
                                                             <th>Action</th>
                                                         </tr>

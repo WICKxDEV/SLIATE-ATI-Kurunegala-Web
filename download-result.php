@@ -140,8 +140,8 @@ $res_student = $stmt_student->get_result();
 // Display student details
 while ($result_student = $res_student->fetch_object()) { ?>
     <p><b>Student Name :</b> <?php echo htmlentities($result_student->StudentName); ?></p>
-    <p><b>Student Roll Id :</b> <?php echo htmlentities($result_student->RollId); ?></p>
-    <p><b>Student Class:</b> <?php echo htmlentities($result_student->ClassName); ?>(<?php echo htmlentities($result_student->Section); ?>)</p>
+    <p><b>Index Number :</b> <?php echo htmlentities($result_student->RollId); ?></p>
+    <p><b>Department :</b> <?php echo htmlentities($result_student->ClassName); ?>(<?php echo htmlentities($result_student->Section); ?>)</p>
 <?php }
 
 // Display table header
